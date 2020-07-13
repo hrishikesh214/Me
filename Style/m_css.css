@@ -4,6 +4,7 @@
         align-items: center;
     }
     .container {
+        top: 20vh;
         width: 100vw;
         padding-left: 0;
         padding-right: 0;
