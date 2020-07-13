@@ -11,7 +11,7 @@ html {
     height: auto;
     width: 70vw;
     left: 50%;
-    top: 25vh;
+    top: 20vh;
     position: absolute;
     transform: translate(-50%);
     background-color: rgba(0, 0, 0, 0.527);
@@ -19,6 +19,7 @@ html {
     margin-bottom: 7vh;
     padding-left: 50px;
     padding-right: 50px;
+    box-shadow: 0 0 200px 50px rgba(24, 137, 230, 0.527);
 }
 
 .dp_img {
@@ -29,6 +30,7 @@ html {
     transform: translate(-50%, -50%);
     height: auto;
     border-radius: 50%;
+    box-shadow: 0 0 100px 30px rgba(230, 148, 24, 0.288);
 }
 
 .name {
@@ -38,6 +40,7 @@ html {
     letter-spacing: 10px;
     word-spacing: 20px;
     background-color: transparent;
+    text-shadow: 0px 0px 10px rgba(151, 3, 250, 0.938);
 }
 
 .desc-container {
@@ -58,6 +61,7 @@ html {
     padding-left: 25px;
     padding-right: 25px;
     background-color: rgb(13, 176, 252);
+    box-shadow: 0 0 1000px 15px rgb(13, 176, 252);
 }
 
 .progress-bar {
@@ -83,6 +87,12 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: .2s;
+}
+
+.lang-info:hover {
+    box-shadow: 0px 0px 100px 10px rgba(230, 15, 15, 0.521);
+    position: relative;
 }
 
 ._exp {
@@ -153,4 +163,8 @@ html {
     text-decoration: none;
     font-family: 'Amatic SC', cursive;
     font-weight: bold;
+}
+
+.text {
+    text-shadow: 0 0 150px rgb(0, 140, 255);
 }

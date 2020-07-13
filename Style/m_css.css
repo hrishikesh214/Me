@@ -5,10 +5,13 @@
     }
     .container {
         top: 20vh;
+        background-color: rgba(0, 0, 0, 0.527);
         width: 100vw;
         padding-left: 0;
         padding-right: 0;
         margin-bottom: 0;
+        /* box-shadow: 0 -25px 50px 30px rgba(0, 0, 0, 0.527); */
+        box-shadow: 0 -25px 50px 30px rgba(24, 137, 230, 0.527);
     }
     .dp_img {
         width: 170px;
