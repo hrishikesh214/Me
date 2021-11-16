@@ -1,191 +1,203 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@200&display=swap');
-body,
-html {
-    background-color: rgb(46, 44, 44);
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;1,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Sans", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.container {
-    height: auto;
-    width: 70vw;
-    left: 50%;
-    top: 20vh;
-    position: absolute;
-    transform: translate(-50%);
-    background-color: rgba(0, 0, 0, 0.527);
-    padding-bottom: 50px;
-    margin-bottom: 7vh;
-    padding-left: 50px;
-    padding-right: 50px;
-    animation: 10s ease infinite shadow_con;
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background: -webkit-gradient(linear, left top, right bottom, from(#28225f), to(#28223f));
+  background: linear-gradient(to right bottom, #28225f, #28223f);
 }
 
-@keyframes shadow_con {
-    0% {
-        box-shadow: 0 0 200px 50px rgba(24, 137, 230, 0.527);
-    }
-    20% {
-        box-shadow: 0 0 200px 50px rgba(196, 24, 230, 0.527);
-    }
-    40% {
-        box-shadow: 0 0 200px 50px rgba(230, 24, 41, 0.527)
-    }
-    60% {
-        box-shadow: 0 0 200px 50px rgba(230, 165, 24, 0.527);
-    }
-    80% {
-        box-shadow: 0 0 200px 50px rgba(24, 230, 34, 0.527);
-    }
-    100% {
-        box-shadow: 0 0 200px 50px rgba(24, 137, 230, 0.527);
-    }
+a {
+  color: white;
+  text-decoration: none;
 }
 
-.dp_img {
-    width: 15vw;
-    left: 50%;
-    top: 50%;
-    position: relative;
-    transform: translate(-50%, -50%);
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 0 100px 30px rgba(230, 148, 24, 0.288);
+.card {
+  color: white;
+  width: 300px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  -webkit-box-shadow: -5px 10px 15px black;
+          box-shadow: -5px 10px 15px black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 10.6rem auto auto;
+      grid-template-rows: 10.6rem auto auto;
 }
 
-.name {
-    font-family: 'Montserrat Subrayada', sans-serif;
-    font-size: 40px;
-    color: white;
-    letter-spacing: 10px;
-    word-spacing: 20px;
-    background-color: transparent;
-    text-shadow: 0px 0px 10px rgba(151, 3, 250, 0.938);
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(13px);
+          backdrop-filter: blur(13px);
+  z-index: -1;
+  border-radius: 7px;
+  -webkit-clip-path: polygon(0 0, 40% 0, 100% 60%, 60% 100%, 0 100%);
+          clip-path: polygon(0 0, 40% 0, 100% 60%, 60% 100%, 0 100%);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
 }
 
-.desc-container {
-    font-family: 'Lobster Two', cursive;
-    color: white;
-    font-size: 30px;
-    margin-top: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card:hover::before {
+  -webkit-clip-path: polygon(0 10%, 50% 0, 100% 10%, 90% 100%, 10% 100%);
+          clip-path: polygon(0 10%, 50% 0, 100% 10%, 90% 100%, 10% 100%);
 }
 
-.as-a {
-    font-family: 'Lobster Two', cursive;
-    font-size: 25px;
-    letter-spacing: 5px;
-    word-spacing: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
-    background-color: rgb(13, 176, 252);
-    box-shadow: 0 0 1000px 15px rgb(13, 176, 252);
+.card .img {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 100%;
 }
 
-.progress-bar {
-    height: 20px;
-    width: 200px;
-    background-color: grey;
-    border-radius: 1rem;
+.card .img img {
+  border-radius: 50%;
+  width: 6.6rem;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
 }
 
-.progress {
-    height: 20px;
-    background-color: rgba(0, 4, 250, 0.555);
-    font-size: 15px;
-    font-family: verdana;
-    border-radius: 1rem;
+.card .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem 0;
 }
 
-.lang-info {
-    margin-top: 10px;
-    background-color: rgb(49, 37, 46);
-    padding: 10px 15px 10px 15px;
-    margin: 5px 5px 5px 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: .2s;
+.card .details .name {
+  font-size: 1.3rem;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
-.lang-info:hover {
-    box-shadow: 0px 0px 100px 10px rgba(230, 15, 15, 0.521);
-    position: relative;
+.card .details .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+  position: relative;
 }
 
-._exp {
-    font-size: 20px;
-    font-family: 'Rokkitt', serif;
-    margin-top: 10px;
+.card .details .contact a {
+  position: relative;
+  padding: 0.7rem;
+  margin: 0 5px;
 }
 
-.blocks {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.card .details .contact a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  background: currentcolor;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 200ms ease-in;
+  transition: -webkit-transform 200ms ease-in;
+  transition: transform 200ms ease-in;
+  transition: transform 200ms ease-in, -webkit-transform 200ms ease-in;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
 }
 
-.legend_o {
-    font-family: 'Amatic SC', cursive;
-    font-weight: normal;
-    font-size: 40px;
-    margin-bottom: 20px;
+.card .details .contact a:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
-.divider {
-    background-color: rgb(70, 67, 67) !important;
-    height: 3px;
-    width: 90%;
-    border: none;
-    margin-top: 30px;
-    margin-bottom: 30px;
+.card .details .contact a i {
+  font-size: 1.7rem;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
 }
 
-.link-block {
-    font-family: 'Amatic SC', cursive;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 15px 10px 15px;
-    margin: 5px 5px 5px 5px;
+.card .details .contact a i:is(.fa-github):hover {
+  color: #333;
 }
 
-.p_body {
-    background-color: rgb(49, 37, 46);
-    padding: 15px 15px 15px 15px;
-    margin: 10px 10px 10px 10px;
-    width: 20vw;
-    height: auto;
-    transition: 0.2s;
+.card .details .contact a i:is(.fa-instagram):hover {
+  color: #c13584;
 }
 
-.p_body:hover {
-    box-shadow: 0px 0px 50px rgb(6, 89, 100);
-    position: relative;
-    width: 23vw;
-    height: auto;
+.card .details .contact a i:is(.fa-youtube):hover {
+  color: #ff0000;
 }
 
-.p_name {
-    font-family: 'Amatic SC', cursive;
-    font-size: 30px;
-    font-weight: bold;
+.card .skills {
+  padding: 1rem 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: 1px solid white;
 }
 
-.p_desc {
-    font-size: 25px;
-    font-family: 'Amatic SC', cursive;
-    margin: 5px 5px 5px 5px;
+.card .skills span {
+  position: relative;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  margin: 0.2rem;
+  border: 1px solid white;
 }
 
-.p_link {
-    text-decoration: none;
-    font-family: 'Amatic SC', cursive;
-    font-weight: bold;
+.card .skills span::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  background: yellow;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 200ms ease-in;
+  transition: -webkit-transform 200ms ease-in;
+  transition: transform 200ms ease-in;
+  transition: transform 200ms ease-in, -webkit-transform 200ms ease-in;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
 }
 
-.text {
-    text-shadow: 0 0 150px rgb(0, 140, 255);
+.card .skills span:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
+/*# sourceMappingURL=style.css.map */
