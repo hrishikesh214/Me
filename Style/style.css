@@ -88,7 +88,19 @@ a {
   font-size: 1.3rem;
   display: -ms-grid;
   display: grid;
-  place-items: center;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: left;
+  gap: 0.5rem;
+  letter-spacing: 3px;
+}
+
+.card .details .name span {
+  -ms-grid-column-align: right;
+      justify-self: right;
 }
 
 .card .details .contact {
@@ -156,27 +168,29 @@ a {
 
 .card .skills {
   padding: 1rem 0.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: -ms-grid;
+  display: grid;
   border-top: 1px solid white;
+  -ms-grid-columns: (70px)[4];
+      grid-template-columns: repeat(4, 70px);
+  -ms-grid-rows: (35px)[5];
+      grid-template-rows: repeat(5, 35px);
 }
 
-.card .skills span {
+.card .skills span:not(.highlight) {
   position: relative;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   padding: 0.4rem 0.8rem;
   margin: 0.2rem;
   border: 1px solid white;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
-.card .skills span::before {
+.card .skills span:not(.highlight)::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -194,10 +208,51 @@ a {
           transform-origin: right;
 }
 
-.card .skills span:hover::before {
+.card .skills span:not(.highlight):hover::before {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   -webkit-transform-origin: left;
           transform-origin: left;
+}
+
+.card .skills .wide {
+  grid-column: span 2;
+  border: 2px solid white;
+}
+
+.card .skills .tall {
+  grid-row: span 2;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 2px solid white;
+}
+
+.card .skills .large {
+  grid-row: span 2;
+  grid-column: span 2;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 2px solid white;
+}
+
+.highlight {
+  position: relative;
+  z-index: 1;
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 30px;
+  width: 110%;
+  height: 70%;
+  background: rgba(217, 236, 5, 0.2);
+  z-index: -1;
+  -webkit-transform: translate(-50%, -50%) rotate(-3deg);
+          transform: translate(-50%, -50%) rotate(-3deg);
+  -webkit-clip-path: polygon(0% 10%, 100% 0, 90% 10%, 100% 20%, 90% 30%, 100% 50%, 90% 70%, 100% 80%, 100% 100%, 0 100%, 0% 90%, 10% 80%, 0% 70%, 10% 50%, 0 30%, 10% 10%);
+          clip-path: polygon(0% 10%, 100% 0, 90% 10%, 100% 20%, 90% 30%, 100% 50%, 90% 70%, 100% 80%, 100% 100%, 0 100%, 0% 90%, 10% 80%, 0% 70%, 10% 50%, 0 30%, 10% 10%);
 }
 /*# sourceMappingURL=style.css.map */

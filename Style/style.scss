@@ -89,7 +89,14 @@ a {
 		.name {
 			font-size: 1.3rem;
 			display: grid;
-			place-items: center;
+			grid-template-columns: repeat(2, auto);
+			align-items: center;
+			justify-items: left;
+			gap: 0.5rem;
+			letter-spacing: 3px;
+			span {
+				justify-self: right;
+			}
 		}
 
 		.contact {
@@ -123,18 +130,75 @@ a {
 
 	.skills {
 		padding: 1rem 0.5rem;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+		display: grid;
 		border-top: 1px solid white;
+		// gap: 0.2rem;
+		grid-template-columns: repeat(4, 70px);
+		grid-template-rows: repeat(5, 35px);
 
-		span {
+		span:not(.highlight) {
 			@include underline_anim(yellow);
 			cursor: pointer;
-			font-size: 0.8rem;
+			font-size: 0.9rem;
 			padding: 0.4rem 0.8rem;
 			margin: 0.2rem;
 			border: 1px solid white;
+			text-align: center;
+			display: grid;
+			place-items: center;
 		}
+
+		.wide {
+			grid-column: span 2;
+			border: 2px solid white;
+		}
+		.tall {
+			grid-row: span 2;
+			font-size: 1rem;
+			font-weight: 700;
+			border: 2px solid white;
+		}
+		.large {
+			grid-row: span 2;
+			grid-column: span 2;
+			font-size: 1rem;
+			font-weight: 700;
+			border: 2px solid white;
+		}
+	}
+}
+.highlight {
+	position: relative;
+	z-index: 1;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 30px;
+		width: 110%;
+		height: 70%;
+		// transform: rotate(300deg);
+		background: rgba(217, 236, 5, 0.2);
+		z-index: -1;
+		transform: translate(-50%, -50%) rotate(-3deg);
+		clip-path: polygon(
+			0% 10%,
+			100% 0,
+			90% 10%,
+			100% 20%,
+			90% 30%,
+			100% 50%,
+			90% 70%,
+			100% 80%,
+			100% 100%,
+			0 100%,
+			0% 90%,
+			10% 80%,
+			0% 70%,
+			10% 50%,
+			0 30%,
+			10% 10%
+		);
 	}
 }
