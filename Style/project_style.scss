@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+:root {
+	--fira: "Fira Sans", sans-serif;
+	--pacifico: "Pacifico", cursive;
+	--heavy: "Righteous", cursive;
+
+	--primary: #66fcf1;
+	--secondary: #45a29e;
+	--grey: #c5c6c7;
+	--dark: #1f2833;
+	--black: #0b0c10;
+	--white: #fff;
+}
+
+@mixin underline_anim($c: currentcolor) {
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 0.07em;
+		min-height: 2px;
+
+		background: $c;
+		bottom: 0;
+		left: 0;
+		transition: transform 200ms ease-in;
+		transform: scaleX(0);
+		transform-origin: right;
+	}
+	&:hover::before {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	color: var(--black);
+}
+body {
+	background-color: #eeeeee;
+	font-family: var(--fira);
+	font-size: 62.5%;
+}
+.wrapper {
+	background-image: linear-gradient(
+		to bottom,
+		var(--white),
+		rgba(0, 50, 100, 0.1),
+		rgba(0, 70, 90, 0.1),
+		rgba(0, 120, 100, 0.1),
+		rgba(0, 140, 170, 0.1),
+		rgba(0, 190, 170, 0.1),
+		rgba(0, 255, 255, 0.1)
+	);
+	border-radius: 5px;
+	margin: 2rem auto;
+	background-color: var(--white);
+	width: clamp(360px, 60%, 700px);
+	font-size: 1.4rem;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	box-shadow: 0 0 20px 5px #999999;
+	overflow: hidden;
+
+	@media (max-width: 550px) {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.label-image {
+		--image-height: 8rem;
+		width: 100%;
+		height: var(--image-height);
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: var(--image-height);
+			background-color: var(--primary);
+			background-image: linear-gradient(
+				270deg,
+				rgba(0, 0, 0, 0.2),
+				rgba(0, 0, 0, 0.1)
+			);
+		}
+		img {
+			position: absolute;
+			top: 1px;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: var(--image-height);
+		}
+	}
+	.label-header {
+		--border-width: 0.8rem;
+		position: relative;
+		padding: 0 2rem;
+		img {
+			width: 7rem;
+			height: 7rem;
+			border-radius: 50%;
+			position: absolute;
+			transform: translate(30%, -50%);
+		}
+		h1 {
+			@include underline_anim();
+			display: inline-block;
+			cursor: pointer;
+			font-size: 2.5rem;
+			font-family: var(--heavy);
+			font-weight: 500;
+			margin: 4rem 0 1rem 0;
+		}
+	}
+
+	.projects {
+		padding: 0 2rem;
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: 60px repeat(9, 120px);
+		grid-template-areas:
+			"title      title       title           title           title"
+			"quotient   quotient    req_caching     req_caching     req_caching"
+			"quotient   quotient    req_caching     req_caching     req_caching"
+			"php_api    php_api     dpw             dpw             dpw"
+			"php_api    php_api     dpw             dpw             dpw"
+			"turbo_sql  turbo_sql   dpw             dpw             dpw"
+			"turbo_sql  turbo_sql   .               article_app     article_app        "
+			"chat_app   chat_app    chat_app        article_app     article_app"
+			"chat_app   chat_app    chat_app        article_app     article_app";
+		gap: 0.7rem;
+
+		@media (max-width: 950px) {
+			display: flex;
+			flex-direction: column;
+			padding-bottom: 2rem;
+		}
+
+		& > .title {
+			grid-area: title;
+			font-size: 2rem;
+			font-weight: 700;
+			margin: 1rem 0;
+		}
+
+		.project {
+			font-size: 1rem;
+			color: var(--grey);
+			padding: 1.5rem;
+			border: 3px solid var(--black);
+			position: relative;
+			word-wrap: normal;
+			@media (max-width: 950px) {
+				width: 100%;
+				margin: 0.5rem 0;
+			}
+			.title {
+				font-style: var(--heavy);
+				font-size: 1.9rem;
+				letter-spacing: -2px;
+				font-weight: 500;
+				margin: 0;
+			}
+			.description {
+				color: var(--dark);
+				font-size: 1rem;
+				margin: 0.5rem 0;
+				line-height: 30px;
+			}
+
+			.tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 6px;
+
+				.tag {
+					font-size: 0.75rem;
+					font-weight: 400;
+					background-color: var(--dark);
+					padding: 4px 5px;
+					border-radius: 7px;
+					color: var(--white);
+				}
+			}
+			.link {
+				@include underline_anim;
+				position: absolute;
+				bottom: 0.5rem;
+				right: 0.5rem;
+				text-decoration: none;
+				color: var(--black);
+				font-size: 1rem;
+				padding: 0.2em 0.7em;
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+#quotient {
+	grid-area: quotient;
+}
+#req_caching {
+	grid-area: req_caching;
+}
+#php_api {
+	grid-area: php_api;
+}
+#dpw {
+	grid-area: dpw;
+}
+#chat_app {
+	grid-area: chat_app;
+}
+#turbo_sql {
+	grid-area: turbo_sql;
+}
+#article_app {
+	grid-area: article_app;
+}
+.highlight {
+	position: relative;
+	z-index: 1;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 30px;
+		width: 110%;
+		height: 70%;
+		// transform: rotate(300deg);
+		background: rgba(217, 236, 5, 0.2);
+		z-index: -1;
+		transform: translate(-50%, -50%) rotate(-3deg);
+		clip-path: polygon(
+			0% 10%,
+			100% 0,
+			90% 10%,
+			100% 20%,
+			90% 30%,
+			100% 50%,
+			90% 70%,
+			100% 80%,
+			100% 100%,
+			0 100%,
+			0% 90%,
+			10% 80%,
+			0% 70%,
+			10% 50%,
+			0 30%,
+			10% 10%
+		);
+	}
+}

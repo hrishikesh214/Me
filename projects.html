@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hrishikesh Vaze</title>
+		<link rel="stylesheet" href="./Style/project_style.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="label-image">
+				<!-- <img src="./Media/subtle-prism.svg" alt="S" /> -->
+			</div>
+			<div class="label-header">
+				<img src="./Media/dp.jfif" alt="P" />
+				<h1 id="link_git">Hrishikesh Vaze</h1>
+			</div>
+			<div class="projects">
+				<div class="title">Projects</div>
+				<div
+					class="project"
+					data-grid-area="quotient"
+					data-title="Quotient"
+					data-description="A web dashboard for the Quotientbot (Discord Bot)"
+					data-link="https://quotientbot.xyz"
+					data-tags="Nodejs, ReactJs, PostgreSQL, Discord, Dashboard"
+				></div>
+				<div
+					class="project"
+					data-grid-area="req_caching"
+					data-title="Req Caching"
+					data-description="A Simple Library for caching any requests written in TS"
+					data-link="https://github.com/hrishikesh214/req-caching"
+					data-tags="TypeScript, Library, Nodejs"
+				></div>
+				<div
+					class="project"
+					data-grid-area="php_api"
+					data-title="PHP API"
+					data-description="A PHP Framework for easily creating APIs"
+					data-link="https://github.com/hrishikesh214/php-api"
+					data-tags="PHP, Framework, JSON"
+				></div>
+				<div
+					class="project"
+					data-grid-area="dpw"
+					data-title="Discord Api Wrapper"
+					data-description="A PHP Wrapper Library that implements some usefull functions for the Discord API"
+					data-link="https://github.com/hrishikesh214/discord-php-wrapper"
+					data-tags="PHP, Discord, Library, JSON"
+				></div>
+				<div
+					class="project"
+					data-grid-area="chat_app"
+					data-title="Chat Application"
+					data-description="Chat Application without websockets"
+					data-link="https://github.com/hrishikesh214/dbms_chat_app"
+					data-tags="ReactJs, Nodejs, Chat, MySQL"
+				></div>
+				<div
+					class="project"
+					data-grid-area="turbo_sql"
+					data-title="Turbo SQL Manager"
+					data-description="Inspires from PHPMyAdmin, this is LITE SQL Manager"
+					data-link="https://github.com/hrishikesh214/Turbo-SQL-Manager"
+					data-tags="PHP, MySQL, Application"
+				></div>
+				<div
+					class="project"
+					data-grid-area="article_app"
+					data-title="Dreamblog"
+					data-description="A simple Article Posting Appliction having cool features"
+					data-link="https://github.com/hrishikesh214/Blog"
+					data-tags="CodeIgniter, PHP, MySQL, Application"
+				></div>
+			</div>
+		</div>
+
+		<script>
+			document
+				.getElementById("link_git")
+				.addEventListener("click", () => {
+					window.open("https://github.com/hrishikesh214")
+				})
+			var projects = document.querySelectorAll(".project")
+			projects.forEach((project) => {
+				project.style.gridArea = project.dataset.gridArea
+				project.id = project.dataset.gridArea
+
+				// add title to project
+				const title = document.createElement("div")
+				const title_text = document.createElement("span")
+				title.classList.add("title")
+				title_text.classList.add("highlight")
+				title_text.innerText = project.dataset.title
+				title.appendChild(title_text)
+				project.append(title)
+
+				// add description to project
+				const description = document.createElement("div")
+				description.classList.add("description")
+				description.innerText = project.dataset.description
+				project.append(description)
+
+				// add tags to project
+				const tags = document.createElement("div")
+				tags.classList.add("tags")
+				const tagList = project.dataset.tags.split(",")
+				tagList.forEach((tag) => {
+					const tagElement = document.createElement("div")
+					tagElement.classList.add("tag")
+					tagElement.innerText = tag
+					tags.appendChild(tagElement)
+				})
+				project.append(tags)
+
+				// add link to project
+				if (project.dataset.link) {
+					const link = document.createElement("a")
+					link.classList.add("link")
+					link.href = project.dataset.link
+					link.target = "_blank"
+					link.innerText = "Visit"
+					project.append(link)
+				}
+			})
+		</script>
+	</body>
+</html>

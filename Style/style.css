@@ -173,8 +173,8 @@ a {
   border-top: 1px solid white;
   -ms-grid-columns: (70px)[4];
       grid-template-columns: repeat(4, 70px);
-  -ms-grid-rows: (35px)[5];
-      grid-template-rows: repeat(5, 35px);
+  -ms-grid-rows: (35px)[4];
+      grid-template-rows: repeat(4, 35px);
 }
 
 .card .skills span:not(.highlight) {
@@ -233,6 +233,23 @@ a {
   font-size: 1rem;
   font-weight: 700;
   border: 2px solid white;
+}
+
+.card .project-link {
+  text-align: right;
+  padding: 1rem 0.5rem 0.5rem 0;
+  text-transform: capitalize;
+}
+
+.card .project-link a {
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  position: relative;
+}
+
+.card .project-link a:hover {
+  font-weight: 700;
 }
 
 .highlight {
