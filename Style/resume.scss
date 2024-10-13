@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Roboto Mono", monospace;
+	font-optical-sizing: auto;
+	font-size: 62.5%;
+	background-color: #ddd;
+	color: #000;
+}
+
+.highlight,
+strong {
+	position: relative;
+	z-index: 1;
+
+	font-weight: normal;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 30px;
+		width: 110%;
+		height: 70%;
+		// transform: rotate(300deg);
+		background: rgba(217, 236, 5, 0.413);
+		z-index: -1;
+		transform: translate(-50%, -50%) rotate(-3deg);
+		clip-path: polygon(
+			0% 10%,
+			100% 0,
+			90% 10%,
+			100% 20%,
+			90% 30%,
+			100% 50%,
+			90% 70%,
+			100% 80%,
+			100% 100%,
+			0 100%,
+			0% 90%,
+			10% 80%,
+			0% 70%,
+			10% 50%,
+			0 30%,
+			10% 10%
+		);
+	}
+}
+
+.container {
+	background-color: #eee;
+	// width: 65vw;
+	page-break-inside: avoid;
+	margin: auto;
+	padding: 3rem 2rem;
+
+	a {
+		text-decoration: none;
+		color: #777;
+	}
+
+	.profile {
+		.name {
+			font-size: 2rem;
+			font-weight: 900;
+		}
+
+		.role {
+			font-size: 1.5rem;
+			font-weight: 300;
+		}
+
+		.contacts {
+			margin: 1rem 0;
+			color: #777;
+			display: flex;
+			flex-direction: column;
+
+			.item {
+				font-size: 0.8rem;
+				font-weight: 400;
+			}
+		}
+	}
+
+	.sections {
+		margin: 2rem 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		.section {
+			.title {
+				font-size: 1.5rem;
+				font-weight: 600;
+			}
+			.content {
+				margin: 0.7rem 0;
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+
+				.item {
+					display: flex;
+					flex-direction: column;
+
+					.label {
+						font-size: 1rem;
+						font-weight: 400;
+					}
+
+					.description {
+						font-size: 0.7rem;
+						font-weight: 400;
+						color: #777;
+
+						ul {
+							list-style-type: none;
+						}
+					}
+				}
+
+				&:is(.no-description) {
+					.item {
+						.label {
+							font-size: 0.7rem;
+							font-weight: 300;
+						}
+					}
+				}
+
+				&:is(.no-gap) {
+					gap: 0;
+				}
+			}
+		}
+	}
+}

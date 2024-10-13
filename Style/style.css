@@ -3,17 +3,14 @@
   margin: 0;
   padding: 0;
   font-family: "Fira Sans", sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  display: -ms-grid;
   display: grid;
   place-items: center;
-  background: -webkit-gradient(linear, left top, right bottom, from(#28225f), to(#28223f));
   background: linear-gradient(to right bottom, #28225f, #28223f);
 }
 
@@ -28,14 +25,10 @@ a {
   height: auto;
   position: relative;
   z-index: 1;
-  -webkit-box-shadow: -5px 10px 15px black;
-          box-shadow: -5px 10px 15px black;
-  display: -ms-grid;
+  box-shadow: -5px 10px 15px black;
   display: grid;
-  -ms-grid-rows: 10.6rem auto auto;
-      grid-template-rows: 10.6rem auto auto;
+  grid-template-rows: 10.6rem auto auto;
 }
-
 .card::before {
   content: "";
   position: absolute;
@@ -50,79 +43,51 @@ a {
   border-radius: 7px;
   -webkit-clip-path: polygon(0 0, 40% 0, 100% 60%, 60% 100%, 0 100%);
           clip-path: polygon(0 0, 40% 0, 100% 60%, 60% 100%, 0 100%);
-  -webkit-transition: all 500ms;
   transition: all 500ms;
 }
-
 .card:hover::before {
   -webkit-clip-path: polygon(0 10%, 50% 0, 100% 10%, 90% 100%, 10% 100%);
           clip-path: polygon(0 10%, 50% 0, 100% 10%, 90% 100%, 10% 100%);
 }
-
 .card .img {
-  display: -ms-grid;
   display: grid;
   place-items: center;
   width: 100%;
 }
-
 .card .img img {
   border-radius: 50%;
   width: 6.6rem;
-  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
 }
-
 .card .details {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin: 1rem 0;
 }
-
 .card .details .name {
   font-size: 1.3rem;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (auto)[2];
-      grid-template-columns: repeat(2, auto);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
   justify-items: left;
   gap: 0.5rem;
   letter-spacing: 3px;
 }
-
 .card .details .name span {
-  -ms-grid-column-align: right;
-      justify-self: right;
+  justify-self: right;
 }
-
 .card .details .contact {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: 70px;
   position: relative;
 }
-
 .card .details .contact a {
   position: relative;
   padding: 0.7rem;
   margin: 0 5px;
 }
-
 .card .details .contact a::before {
   content: "";
   position: absolute;
@@ -131,52 +96,34 @@ a {
   background: currentcolor;
   bottom: 0;
   left: 0;
-  -webkit-transition: -webkit-transform 200ms ease-in;
-  transition: -webkit-transform 200ms ease-in;
   transition: transform 200ms ease-in;
-  transition: transform 200ms ease-in, -webkit-transform 200ms ease-in;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: right;
-          transform-origin: right;
+  transform: scaleX(0);
+  transform-origin: right;
 }
-
 .card .details .contact a:hover::before {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: left;
-          transform-origin: left;
+  transform: scaleX(1);
+  transform-origin: left;
 }
-
 .card .details .contact a i {
   font-size: 1.7rem;
-  -webkit-transition: all 500ms;
   transition: all 500ms;
 }
-
 .card .details .contact a i:is(.fa-github):hover {
   color: #333;
 }
-
 .card .details .contact a i:is(.fa-instagram):hover {
   color: #c13584;
 }
-
 .card .details .contact a i:is(.fa-youtube):hover {
   color: #ff0000;
 }
-
 .card .skills {
   padding: 1rem 0.5rem;
-  display: -ms-grid;
   display: grid;
   border-top: 1px solid white;
-  -ms-grid-columns: (70px)[4];
-      grid-template-columns: repeat(4, 70px);
-  -ms-grid-rows: (35px)[4];
-      grid-template-rows: repeat(4, 35px);
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(4, 35px);
 }
-
 .card .skills span:not(.highlight) {
   position: relative;
   cursor: pointer;
@@ -185,11 +132,9 @@ a {
   margin: 0.2rem;
   border: 1px solid white;
   text-align: center;
-  display: -ms-grid;
   display: grid;
   place-items: center;
 }
-
 .card .skills span:not(.highlight)::before {
   content: "";
   position: absolute;
@@ -198,35 +143,24 @@ a {
   background: yellow;
   bottom: 0;
   left: 0;
-  -webkit-transition: -webkit-transform 200ms ease-in;
-  transition: -webkit-transform 200ms ease-in;
   transition: transform 200ms ease-in;
-  transition: transform 200ms ease-in, -webkit-transform 200ms ease-in;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: right;
-          transform-origin: right;
+  transform: scaleX(0);
+  transform-origin: right;
 }
-
 .card .skills span:not(.highlight):hover::before {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: left;
-          transform-origin: left;
+  transform: scaleX(1);
+  transform-origin: left;
 }
-
 .card .skills .wide {
   grid-column: span 2;
   border: 2px solid white;
 }
-
 .card .skills .tall {
   grid-row: span 2;
   font-size: 1rem;
   font-weight: 700;
   border: 2px solid white;
 }
-
 .card .skills .large {
   grid-row: span 2;
   grid-column: span 2;
@@ -234,20 +168,17 @@ a {
   font-weight: 700;
   border: 2px solid white;
 }
-
 .card .project-link {
   text-align: right;
   padding: 1rem 0.5rem 0.5rem 0;
   text-transform: capitalize;
 }
-
 .card .project-link a {
   color: white;
   text-decoration: none;
   border-radius: 5px;
   position: relative;
 }
-
 .card .project-link a:hover {
   font-weight: 700;
 }
@@ -256,7 +187,6 @@ a {
   position: relative;
   z-index: 1;
 }
-
 .highlight::before {
   content: "";
   position: absolute;
@@ -267,9 +197,7 @@ a {
   height: 70%;
   background: rgba(217, 236, 5, 0.2);
   z-index: -1;
-  -webkit-transform: translate(-50%, -50%) rotate(-3deg);
-          transform: translate(-50%, -50%) rotate(-3deg);
+  transform: translate(-50%, -50%) rotate(-3deg);
   -webkit-clip-path: polygon(0% 10%, 100% 0, 90% 10%, 100% 20%, 90% 30%, 100% 50%, 90% 70%, 100% 80%, 100% 100%, 0 100%, 0% 90%, 10% 80%, 0% 70%, 10% 50%, 0 30%, 10% 10%);
           clip-path: polygon(0% 10%, 100% 0, 90% 10%, 100% 20%, 90% 30%, 100% 50%, 90% 70%, 100% 80%, 100% 100%, 0 100%, 0% 90%, 10% 80%, 0% 70%, 10% 50%, 0 30%, 10% 10%);
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
