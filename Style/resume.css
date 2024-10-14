@@ -20,7 +20,8 @@ body {
 strong {
   position: relative;
   z-index: 1;
-  font-weight: normal;
+  font-weight: 500;
+  color: #000;
 }
 .highlight::before,
 strong::before {
@@ -45,15 +46,19 @@ strong::before {
   padding: 3rem 2rem;
 }
 .container a {
+  --color: #0062ff;
   text-decoration: none;
-  color: #777;
+  color: var(--color);
+}
+.container a strong {
+  color: var(--color);
 }
 .container .profile .name {
   font-size: 2rem;
   font-weight: 900;
 }
 .container .profile .role {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 300;
 }
 .container .profile .contacts {
@@ -73,7 +78,7 @@ strong::before {
   gap: 1rem;
 }
 .container .sections .section .title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 .container .sections .section .content {
@@ -87,7 +92,7 @@ strong::before {
   flex-direction: column;
 }
 .container .sections .section .content .item .label {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
 }
 .container .sections .section .content .item .description {
@@ -95,13 +100,11 @@ strong::before {
   font-weight: 400;
   color: #777;
 }
-.container .sections .section .content .item .description ul {
-  list-style-type: none;
-}
 .container .sections .section .content:is(.no-description) .item .label {
   font-size: 0.7rem;
   font-weight: 300;
 }
 .container .sections .section .content:is(.no-gap) {
   gap: 0;
+  margin: 0.1rem 0;
 }/*# sourceMappingURL=resume.css.map */

@@ -21,8 +21,10 @@ body {
 strong {
 	position: relative;
 	z-index: 1;
+	font-weight: 500;
+	color: #000;
 
-	font-weight: normal;
+	// font-weight: normal;
 	&::before {
 		content: "";
 		position: absolute;
@@ -64,8 +66,13 @@ strong {
 	padding: 3rem 2rem;
 
 	a {
+		--color: #0062ff;
 		text-decoration: none;
-		color: #777;
+		color: var(--color);
+
+		strong {
+			color: var(--color);
+		}
 	}
 
 	.profile {
@@ -75,7 +82,7 @@ strong {
 		}
 
 		.role {
-			font-size: 1.5rem;
+			font-size: 1.1rem;
 			font-weight: 300;
 		}
 
@@ -100,7 +107,7 @@ strong {
 
 		.section {
 			.title {
-				font-size: 1.5rem;
+				font-size: 1.3rem;
 				font-weight: 600;
 			}
 			.content {
@@ -114,7 +121,7 @@ strong {
 					flex-direction: column;
 
 					.label {
-						font-size: 1rem;
+						font-size: 0.9rem;
 						font-weight: 400;
 					}
 
@@ -124,7 +131,7 @@ strong {
 						color: #777;
 
 						ul {
-							list-style-type: none;
+							// list-style-type: none;
 						}
 					}
 				}
@@ -140,6 +147,7 @@ strong {
 
 				&:is(.no-gap) {
 					gap: 0;
+					margin: 0.1rem 0;
 				}
 			}
 		}
