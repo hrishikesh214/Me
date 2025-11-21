@@ -56,6 +56,10 @@ strong {
 			10% 10%
 		);
 	}
+
+	&:is(.premium)::before {
+		background-color: rgba(68, 0, 255, 0.2);
+	}
 }
 
 .container {
